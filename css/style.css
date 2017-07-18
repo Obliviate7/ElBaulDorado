@@ -1,0 +1,157 @@
+body {
+  background-image: url(../images/white-wood.jpg);
+}
+
+.mainHeader{
+
+}
+.title {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  text-align: center;
+  font-size: 60px;
+  text-decoration: none;
+}
+.mainHeader a {
+  text-decoration: none;
+  color: black;
+}
+.titleLink {
+  text-decoration: none;
+  color: black;
+}
+.titleLink :hover {
+  text-decoration: none;
+  color: black;
+}
+.bannerTop{
+
+}
+.buttonLogin, .buttonSignIn {
+  font-family: 'Lora', serif;
+  position: relative;
+  left: 72%;
+  bottom: 85px;
+  margin: 10px;
+}
+.buttonSignIn{
+
+}
+
+/* Edicion de NAV */
+
+.mainNav{
+  margin-top: 30px;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  font-size: 18px;
+  font-family: 'Lora', serif;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #af9f82;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+.navbar-default {
+    background-color: #f7f5ef;
+    border-color: #f7f5ef;
+}
+.navbar-toggle {
+  float: left;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #af9f82;
+}
+/* Carousel */
+
+.girlspics {
+width: 100%;
+height: auto;
+
+}
+/* Footer */
+.footerMain{
+  background-color: black;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+}
+.footerUl {
+  padding-top: 10px;
+  list-style-type: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*Login Form*/
+.loginTitle {
+  padding-top: 50px;
+  margin: 0,auto;
+}
+form {
+  width: 30%;
+  margin: 0 auto;
+  background-color: white;
+
+  text-align: center;
+  padding: 40px;
+}
+label input {
+  display: inline-block;
+}
+
+/* FAQ's */
+.containerFaqs {
+  font-family: 'Lora', serif;
+ background-color: white;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ padding-top: 5px;
+}
+
+.titleFaqs {
+  text-align: center;
+}
+.containerFaqs p {
+  text-align: center;
+}
+/* LOGIN */
+.formLogin {
+  border-radius: 20px;
+}
+.containerLogin {
+  font-family: 'Lora', serif;
+}
+.titleLogin {
+  text-align: center;
+}
+
+/* REGISTER */
+.containerRegister {
+  font-family: 'Lora', serif;
+  text-align: center;
+
+}
+.titleRegister {
+  text-align: center;
+}
+.containerRegister p {
+  text-align: center;
+}
+
+.formRegister {
+  border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  form{
+    width: 100%;
+  }
+}

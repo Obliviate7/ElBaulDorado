@@ -2,9 +2,6 @@ body {
   background-image: url(../images/white-wood.jpg);
 }
 
-.mainHeader{
-
-}
 .title {
   font-family: 'Playfair Display', serif;
   color: black;
@@ -94,16 +91,10 @@ height: auto;
   padding-top: 50px;
   margin: 0,auto;
 }
-form {
-  width: 30%;
-  margin: 0 auto;
-  background-color: white;
 
-  text-align: center;
-  padding: 40px;
-}
 label input {
   display: inline-block;
+  text-align: center;
 }
 
 /* FAQ's */
@@ -149,6 +140,41 @@ label input {
   border-radius: 20px;
 }
 
+/* Modificaciones CATA */
+.red {
+  color: red;
+}
+
+/* Modificaciones FABI */
+.checkbox
+{
+    text-align: left;
+    display: inline-block;
+    width: 45%;
+}
+.forgot
+{
+    text-align: right;
+    display: inline-block;
+    width: 45%;
+    font-size: .85em;
+}
+.titleForgot{
+    text-align: center;
+}
+form {
+    width: 450px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    padding: 40px;
+}
+.mainHeader{
+    text-align: center;
+}
+input {
+  text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
   form{

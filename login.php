@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title class="titleLink">El Baul Dorado - Register</title>
+    <title>El Baul Dorado - Login</title>
   </head>
   <body>
 
@@ -42,62 +42,23 @@
     </nav>
 
 
-    <div class="containerRegister">
-      <h2 class="titleRegister">Registrate</h2>
-      <form class="formRegister">
-        <p>Por favor completa los datos a contunuacion:</p>
-
-        <div class="form-group">
-          <label for="usr">Nombre Completo:</label>
-          <input type="text" class="form-control" id="usr" >
-        </div>
-
+    <div class="containerLogin">
+      <h2 class="titleLogin" >Ingresa tus datos</h2>
+      <form class="formLogin" action="/action_page.php">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="ejemplo@elbauldorado.com" name="email">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
         </div>
-
         <div class="form-group">
-          <label for="pwd">Contraseña:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="*******">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
         </div>
-
-
-        <div class="form-group">
-          <label for="prgtsrct">Pregunta secreta:</label>
-          <input type="text" class="form-control" id="prgtsrct" placeholder="Cual fue el nombre de mi primera mascota?">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Recordar mis datos</label>
         </div>
-        <p>Prendas favoritas       </p>
-            <div class="checkbox">
-              <label><input type="checkbox" value="Remeras">Remeras</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="Pantalones">Pantalones</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="Jeans">Jeans</label>
-          </div>
-
-        <p>Rango de edad       </p>
-            <div class="radio">
-             <label><input type="radio" name="optradio">18 - 25</label>
-           </div>
-           <div class="radio">
-             <label><input type="radio" name="optradio">26 - 35</label>
-           </div>
-           <div class="radio">
-             <label><input type="radio" name="optradio" >35 - 49</label>
-           </div>
-           <div class="radio">
-             <label><input type="radio" name="optradio" >50 - 100</label>
-           </div>
-
-          <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
-
-
-
 
     <footer class="footerMain">
       <ul class="footerUl">

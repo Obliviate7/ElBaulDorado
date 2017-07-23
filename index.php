@@ -8,13 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>El Baul Dorado - Login</title>
+    <title>El Baul Dorado - Home</title>
   </head>
   <body>
 
     <header class="mainHeader">
-      <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
-        <a class="title" href="index.html">El Baul Dorado</a>
+        <h1 class="title">El Baul Dorado</h1>
       <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
       <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
@@ -41,24 +40,9 @@
       </div>
     </nav>
 
-
-    <div class="containerLogin">
-      <h2 class="titleLogin" >Ingresa tus datos</h2>
-      <form class="formLogin" action="/action_page.php">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-        </div>
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-    </div>
+    <section class="carousel">
+      <img class="girlspics" src="images/girls.jpg" alt="Girls">
+    </section>
 
     <footer class="footerMain">
       <ul class="footerUl">

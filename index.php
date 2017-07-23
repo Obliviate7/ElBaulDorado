@@ -13,7 +13,7 @@
   <body>
 
     <header class="mainHeader">
-        <h1 class="title">El Baul Dorado</h1>
+        <h1 class="title">El Baul Dorado Prueba</h1>
       <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
       <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>

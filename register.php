@@ -8,10 +8,9 @@ require_once "users.php";
 $completed = isset($_POST);
 
 if ($completed) {
-  echo "puto";
+  checkAll($miUsuario);
   if (empty($errores)){
-    $result = saveUser($_REQUEST['usrName'], $_REQUEST['usrSurname'], $_REQUEST['birthDate'], $_REQUEST['radioGenre'], $_REQUEST['email'], $_REQUEST['pass']);
-
+    $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass']);
     if (is_array($result) && ! empty($result)) {
         echo "Dummie!";
       }

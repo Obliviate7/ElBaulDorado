@@ -4,6 +4,7 @@ require_once "checks.php";
 require_once "users.php";
 
 //Inicializar el usuario
+$errors = [];
 
 $completed = isset($_REQUEST['submitted']);
 

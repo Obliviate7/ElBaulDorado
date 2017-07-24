@@ -69,14 +69,13 @@ if ($completed) {
     <div class="containerRegister">
 
       <h2 class="titleRegister">Registrate</h2>
-      <form action"register.php" method="post" enctype="multipart/form-data" class="formRegister">
+      <form action="register.php" method="post" enctype="multipart/form-data" class="formRegister">
+        <p>Por favor completa los datos a continuacion:</p>
         <?php
             if (count($errors)) {
                 var_dump($errors);
             }
-
         ?>
-        <p>Por favor completa los datos a continuacion:</p>
         <p><strong class="red">*</strong> campos obligatorios</p>
 
         <div class="form-group">

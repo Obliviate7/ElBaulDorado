@@ -4,7 +4,6 @@ require_once "checks.php";
 require_once "users.php";
 
 //Inicializar el usuario
-$errors = [];
 
 $completed = isset($_REQUEST['submitted']);
 
@@ -80,8 +79,8 @@ if ($completed) {
 
         <div class="form-group">
 
-          <label for="usrname">Nombre:<strong class="red">*</strong></label>
-          <input type="text" name="usrName" class="form-control" id="usNname" >
+          <label for="usrName">Nombre:<strong class="red">*</strong></label>
+          <input type="text" name="usrName" class="form-control" id="usrNname" >
           <span style='color:red' class="error">
             <?php
             if(isset($errors["usrName"])) {
@@ -92,7 +91,7 @@ if ($completed) {
         </div>
 
         <div class="form-group">
-          <label for="usrsurname">Apellido:<strong class="red">*</strong></label>
+          <label for="usrSurname">Apellido:<strong class="red">*</strong></label>
           <input type="text" name="usrSurname" class="form-control" id="usrSurname" >
           <span style='color:red' class="error">
             <?php
@@ -118,7 +117,7 @@ if ($completed) {
         </div>
 
         <div class="form-group">
-          <label for="genre">Género:<strong class="red">*</strong></label>
+          <label for="radioGenre">Género:<strong class="red">*</strong></label>
           <div>
             <label class="genre"><input type="radio" name="radioGenre" value="Mujer" required>Mujer</label>
             <label class="genre"><input type="radio" name="radioGenre" value="Hombre">Hombre</label>

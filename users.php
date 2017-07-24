@@ -14,8 +14,9 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass)
       'email'     => $email,
       'password'  => $pass
   ]);
-var_dump($jsonUser);
+
   if (writeUserFile($jsonUser)) {
+    uploadPhoto($foto);
     return true;
   }
   else {

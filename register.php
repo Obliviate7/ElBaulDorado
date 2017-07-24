@@ -10,7 +10,7 @@ $completed = isset($_POST);
 if ($completed) {
   $errores = checkAll($_POST);
   if (isset($errores) && empty($errores)){
-    $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass']);
+    $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass'], $_FILES['avatar']);
     if (!$result) {
         echo "Dummie!";
       }

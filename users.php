@@ -1,7 +1,7 @@
 
 <?php
 
-function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass) {
+function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass, $photo) {
 
     $pass = sha1($pass);
 
@@ -16,7 +16,7 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass)
   ]);
 
   if (writeUserFile($jsonUser)) {
-    uploadPhoto($foto);
+    uploadPhoto($photo);
     return true;
   }
   else {
@@ -84,7 +84,7 @@ function checkUser($usrName,$usrSurname, $email, $pass) {
 }
 
 
-function uploadPhoto($foto){
+function uploadPhoto($photo){
   if (count($photo)) {
       $avatarFileName = $photo['name'];
       $avatarFile = $photo['tmp_name'];

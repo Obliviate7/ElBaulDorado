@@ -1,6 +1,13 @@
+
 <?php
-    session_start();
-    require_once "users.php";
+  session_start();
+  require_once "users.php";
+
+/*si no esta iniciada la sesion se redirige al home*/
+  if (isset($_SESSION['email'])){
+  }  else{
+    header('Location: index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,11 +19,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>El Baul Dorado - Home</title>
+    <title>El Baul Dorado - Bienvenido</title>
   </head>
   <body>
     <header class="mainHeader">
-        <h1 class="title">El Baul Dorado</h1>
+      <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
+        <a class="title" href="index.php">El Baul Dorado</a>
       <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
       <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
@@ -56,13 +64,19 @@
               ?>
           </li>
           </span>
-        </ul>
+          </ul>
         </div>
       </div>
     </nav>
-    <section class="carousel">
-      <img class="girlspics" src="images/girls.jpg" alt="Girls">
-    </section>
+    <div class="containerLogin">
+      <h2 class="titleLogin" >Bienvenido!</h2>
+      <form class="formLogin" action="login.php" method='post' enctype="multipart/form-data">
+        <input type='hidden' name='submitted' id='submitted' value='1'/>
+        <div class="form-group">
+          <label > <?php echo "Bienvenido a nuestra pagina "; echo $_SESSION['email'];  ?>  </label>
+        </div>
+      </form>
+    </div>
 
     <footer class="footerMain">
       <ul class="footerUl">

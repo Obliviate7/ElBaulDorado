@@ -1,3 +1,28 @@
+<?php
+  session_start();
+  require_once "users.php";
+  $errorDeDatos = "";
+
+/*si esta iniciada la sesion se redirige al home*/
+  if (!(isset($_SESSION['email']))){
+  }  else{
+    header('Location: index.php');
+  }
+
+/*comparacion de mail y pass para logearse*/
+  if (isset($_REQUEST['submitted']) && $_REQUEST['submitted'] == 1) {
+    $login = loginUser($_REQUEST['email'], $_REQUEST['password'] );
+    if ($login) {
+      header('Location: welcome.php');
+      $_SESSION['email'] = $_REQUEST['email'];
+      $userLogIn = $_SESSION['email'] ;
+      $errorDeDatos = "";
+    } else {
+      $errorDeDatos = "DATOS INCORRECTOS";
+    }
+  }
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +39,7 @@
 
     <header class="mainHeader">
       <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
-        <a class="title" href="index.html">El Baul Dorado</a>
+        <a class="title" href="index.php">El Baul Dorado</a>
       <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
       <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
@@ -31,32 +56,61 @@
             <li><a href="#">Mujeres</a></li>
             <li><a href="#">Hombres</a></li>
             <li><a href="#">Conocenos</a></li>
-            <li><a href="faq.html">FAQ's</a></li>
+            <li><a href="faq.php">FAQ's</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Registrate </a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Ingresa </a></li>
+            <span>
+            <li>
+               <?php
+               /*si esta iniciada la sesion muestra el deslogear, si no el register*/
+               if (isset($_SESSION['email'])) {
+                    echo '<a href="logOut.php"><span class="glyphicon glyphicon-user"></span>Deslogear</a>';
+               } else {
+                  echo '<a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrate</a>';
+                  }
+               ?>
+              </li>
+          </span>
+          <span><li>
+              <?php
+              /*si esta iniciada la sesion muestra el mail, si no el login*/
+              if (isset($_SESSION['email'])) {
+                 echo $_SESSION['email'];
+              } else {
+                 echo'<a href="login.php" ><span class="glyphicon glyphicon-log-in"></span>Login</a>';
+                 }
+              ?>
+          </li>
+          </span>
           </ul>
         </div>
       </div>
     </nav>
 
-
     <div class="containerLogin">
       <h2 class="titleLogin" >Ingresa tus datos</h2>
-      <form class="formLogin" action="/action_page.php">
+      <form class="formLogin" action="login.php" method='post' enctype="multipart/form-data">
+        <input type='hidden' name='submitted' id='submitted' value='1'/>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value=''>
         </div>
         <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+        </div>
+        <div>
+          <?php
+            echo $errorDeDatos;
+          ?>
         </div>
         <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Recordar mis datos</label>
+          <label><input type="checkbox" name="remember"> Remember me</label>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="forgot">
+            <a href="forgotPassword.php" class="buttonForgotPassword">Olvidé mi contraseña</a>
+        </div>
+        <button type="submit" class="btn btn-default" value='Enviar'>Submit</button>
       </form>
     </div>
 

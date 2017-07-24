@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require_once "users.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,11 +17,10 @@
   <body>
     <header class="mainHeader">
       <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
-        <a class="title" href="index.html">El Baul Dorado</a>
+        <a class="title" href="index.php">El Baul Dorado</a>
       <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
       <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
-
     <nav class="mainNav navbar navbar-default">
       <div class="container-fluid">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,16 +33,34 @@
             <li><a href="#">Mujeres</a></li>
             <li><a href="#">Hombres</a></li>
             <li><a href="#">Conocenos</a></li>
-            <li><a href="faq.html">FAQ's</a></li>
+            <li><a href="faq.php">FAQ's</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Registrate </a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Ingresa </a></li>
-          </ul>
+            <span>
+            <li>
+               <?php
+               if (isset($_SESSION['email'])) {
+                  echo '<a href="logOut.php"><span class="glyphicon glyphicon-user"></span>Deslogear</a>';
+               } else {
+                  echo '<a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrate</a>';
+                  }
+               ?>
+              </li>
+          </span>
+          <span><li>
+              <?php
+              if (isset($_SESSION['email'])) {
+                 echo $_SESSION['email'];
+              } else {
+                 echo'<a href="login.php" ><span class="glyphicon glyphicon-log-in"></span>Login</a>';
+                 }
+              ?>
+          </li>
+          </span>
+            </ul>
         </div>
       </div>
     </nav>
-
     <div class="containerFaqs">
       <h2 class="titleFaqs">FAQ'S</h2>
       <p>Tienes preguntas? aca te respondemos las mas frecuentes, si no encuentras tu pregunta aca, envianos un mail a "consultas@elbauldorado.com"</p>
@@ -64,7 +85,6 @@
             </div>
           </div>
         </div>
-
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
@@ -85,7 +105,6 @@
             <div class="panel-body">Te las podemos enviar por OCA o la podes retirar por nuestro deposito en Cabildo y Juramento (barrio Belgrano, CABA).</div>
           </div>
         </div>
-
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
@@ -107,8 +126,6 @@
             <div class="panel-body">Ya que nuestra plataforma funciona como intermediaria entre dos partes no hacemos reembolsos.</div>
           </div>
         </div>
-
-
       </div>
     </div>
 

@@ -18,9 +18,9 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass)
 
   if (writeUserFile($jsonUser)) {
     uploadPhoto($photo);
+    return $result;
   }
-  return $result;
-  } else {
+  else {
     return $errors;
   }
   }

@@ -89,7 +89,7 @@ function uploadPhoto($photo){
       $avatarFileName = $photo['name'];
       $avatarFile = $photo['tmp_name'];
       $avatarExtension = pathinfo($avatarFileName, PATHINFO_EXTENSION);
-      $hash= sha1($user['username'])
+      $hash= sha1($user['username']);
       $result = move_uploaded_file($avatarFile, 'avatars/' . $hash . '.' . $avatarExtension);
       $arch= $hash.".".$avatarExtension;
        return $arch;

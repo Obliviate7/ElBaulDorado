@@ -8,7 +8,7 @@ require_once "users.php";
 $completed = isset($_POST);
 
 if ($completed) {
-  checkAll($miUsuario);
+  checkAll($_POST);
   if (empty($errores)){
     $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass']);
     if (is_array($result) && ! empty($result)) {

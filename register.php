@@ -5,7 +5,7 @@ require_once "users.php";
 
 //Inicializar el usuario
 
-$completed = isset($_REQUEST['submitted']);
+$completed = isset($_POST);
 
 if ($completed) {
   echo "puto";

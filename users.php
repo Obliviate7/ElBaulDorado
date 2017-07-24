@@ -1,6 +1,5 @@
 
 <?php
-require_once "checks.php";
 
 function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass) {
 

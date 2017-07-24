@@ -8,6 +8,7 @@ require_once "users.php";
 $completed = isset($_REQUEST['submitted']);
 
 if ($completed) {
+  echo "puto";
   if (empty($errores)){
     $result = saveUser($_REQUEST['usrName'], $_REQUEST['usrSurname'], $_REQUEST['birthDate'], $_REQUEST['radioGenre'], $_REQUEST['email'], $_REQUEST['pass']);
 

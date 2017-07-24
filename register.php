@@ -8,7 +8,7 @@ require_once "users.php";
 $completed = isset($_REQUEST['submitted']);
 
 if ($completed) {
-
+  if (empty($errores)){
     $result = saveUser($_REQUEST['usrName'], $_REQUEST['usrSurname'], $_REQUEST['birthDate'], $_REQUEST['radioGenre'], $_REQUEST['email'], $_REQUEST['pass']);
 
     if (is_array($result) && ! empty($result)) {
@@ -17,6 +17,7 @@ if ($completed) {
     else {
         echo "Saved. Awesome!";
       }
+    }
  }
 
  ?>

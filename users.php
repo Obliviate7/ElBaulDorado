@@ -11,10 +11,12 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass)
 
     // Transformarlo a json
   $jsonUser = json_encode([
-      'usrName'   => $usrName,
-      'usrSurname'=> $usrSurname,
+      'name'      => $usrName,
+      'surname'   => $usrSurname,
+      'birthDate' => $birthDate,
+      'genre'     => $radioGenre,
       'email'     => $email,
-      'pass'      => $pass
+      'password'  => $pass
   ]);
 
   if (writeUserFile($jsonUser)) {

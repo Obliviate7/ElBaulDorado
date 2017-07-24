@@ -4,7 +4,7 @@ require_once "checks.php";
 
 function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass) {
 
-  $errors = checkUser($usrName,$usrSurname, , );
+  $errors = checkUser($usrName,$usrSurname, $email, $pass);
 
   if (empty($errors)) {
     $pass = sha1($pass);

@@ -32,10 +32,6 @@ function checkAll($miUsuario){
 		{
 			$errores[] = "El mail tiene forma fea";
 		}
-		if (existeElMail($miUsuario["email"]))
-		{
-			$errores[] = "Usuario ya registrado";
-		}
 		return $errores;
 	}
 

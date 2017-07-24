@@ -12,11 +12,11 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass,
       'birthDate' => $birthDate,
       'genre'     => $radioGenre,
       'email'     => $email,
-      'password'  => $pass
+      'password'  => $pass,
+      'avatar'    => uploadPhoto($photo)
   ]);
 
   if (writeUserFile($jsonUser)) {
-    uploadPhoto($photo);
     return true;
   }
   else {
@@ -89,10 +89,14 @@ function uploadPhoto($photo){
       $avatarFileName = $photo['name'];
       $avatarFile = $photo['tmp_name'];
       $avatarExtension = pathinfo($avatarFileName, PATHINFO_EXTENSION);
-
-      $result = move_uploaded_file($avatarFile, 'avatars/' . sha1($user['username']) . '.' . $avatarExtension);
+      $hash= sha1($user['username'])
+      $result = move_uploaded_file($avatarFile, 'avatars/' . $hash . '.' . $avatarExtension);
+      $arch= $hash.".".$avatarExtension;
+       return $arch;
   }
-  return $resultado;
+  else {
+    return "";
+  }
 }
 
 

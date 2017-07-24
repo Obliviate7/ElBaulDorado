@@ -16,11 +16,10 @@ function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass)
   ]);
 var_dump($jsonUser);
   if (writeUserFile($jsonUser)) {
-    uploadPhoto($photo);
-    return $result;
+    return true;
   }
   else {
-    return $errors;
+    return false;
   }
   }
 

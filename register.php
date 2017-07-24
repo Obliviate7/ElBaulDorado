@@ -3,19 +3,11 @@
 require_once "checks.php";
 require_once "users.php";
 
+//Inicializar el usuario
+
 $completed = isset($_REQUEST['submitted']);
 
-$errors[] = 0;
-
 if ($completed) {
-
-    if (count($_FILES)) {
-        $avatarFileName = $_FILES['avatar']['name'];
-        $avatarFile = $_FILES['avatar']['tmp_name'];
-        $avatarExtension = pathinfo($avatarFileName, PATHINFO_EXTENSION);
-
-        move_uploaded_file($avatarFile, 'avatars/' . sha1($user['username']) . '.' . $avatarExtension);
-    }
 
     $result = saveUser($_REQUEST['usrName'], $_REQUEST['usrSurname'], $_REQUEST['birthDate'], $_REQUEST['radioGenre'], $_REQUEST['email'], $_REQUEST['pass']);
 
@@ -76,14 +68,13 @@ if ($completed) {
     <div class="containerRegister">
 
       <h2 class="titleRegister">Registrate</h2>
+      <?php
+          if (count($errors)) {
+              var_dump($errors);
+          }
 
+      ?>
       <form action"register.php" method="post" enctype="multipart/form-data" class="formRegister">
-        <?php
-            if (count($errors)) {
-                var_dump($errors);
-            }
-
-        ?>
         <p>Por favor completa los datos a continuacion:</p>
         <p><strong class="red">*</strong> campos obligatorios</p>
 
@@ -93,7 +84,7 @@ if ($completed) {
           <input type="text" name="usrName" class="form-control" id="usNname" >
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["usrname"])) {
+            if(isset($errors["usrName"])) {
               echo "El nombre ingresado no es válido";
             }
              ?>
@@ -102,7 +93,7 @@ if ($completed) {
 
         <div class="form-group">
           <label for="usrsurname">Apellido:<strong class="red">*</strong></label>
-          <input type="text" name="usrsurname" class="form-control" id="usrSurname" >
+          <input type="text" name="usrSurname" class="form-control" id="usrSurname" >
           <span style='color:red' class="error">
             <?php
             if(isset($errors["usrSurname"])) {
@@ -159,11 +150,11 @@ if ($completed) {
         </div>
 
         <div class="form-group">
-          <label for="passcheck">Confirmar Contraseña:<strong class="red">*</strong></label>
-          <input type="password" name="passcheck" class="form-control" id="passcheck" placeholder="*******">
+          <label for="passCheck">Confirmar Contraseña:<strong class="red">*</strong></label>
+          <input type="password" name="passCheck" class="form-control" id="passCheck" placeholder="*******">
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["passcheck"])) {
+            if(isset($errors["passCheck"])) {
               echo "La contraseña ingresada no es válida";
             }
              ?>
@@ -173,13 +164,6 @@ if ($completed) {
         <div class="form-gruop">
           <label for="avatar">Foto de Perfil</label>
           <input type="file" name="avatar">
-          <span style='color:red' class="error">
-            <?php
-            if(isset($errors["usrsurname"])) {
-              echo "El nombre ingresado no es válido";
-            }
-             ?>
-          </span>
         </div>
         <br>
 

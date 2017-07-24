@@ -1,5 +1,38 @@
 
 <?php
+require_once "checks.php";
+
+function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass) {
+
+  $errors = checkUser($usrName,$usrSurname, , );
+
+  if (empty($errors)) {
+    $pass = sha1($pass);
+
+    // Transformarlo a json
+  $jsonUser = json_encode([
+      'usrName'   => $usrName,
+      'usrSurname'=> $usrSurname,
+      'email'     => $email,
+      'pass'      => $pass
+  ]);
+
+  if (writeUserFile($jsonUser)) {
+    uploadPhoto($photo);
+  }
+  return $result;
+  } else {
+    return $errors;
+  }
+  }
+
+  function writeUserFile($jsonUser) {
+  $fp = fopen("users.json", "a+");
+
+  $result = fwrite($fp, $jsonUser . PHP_EOL);
+
+  return $result;
+  }
 
 /*funcion para buscar mail y pass registrado*/
 function loginUser($email, $password)
@@ -31,4 +64,38 @@ function searchUser($email)
   }
   return false;
 }
+
+
+function checkUser($usrName,$usrSurname, $email, $pass) {
+
+ $errors = [];
+
+ if (! checkNameSurname($usrName, 2)){
+   $errors["usrName"] = "El nombre es inválido";
+ }
+ if (! checkNameSurname($usrName, 2)) {
+   $errors["usrSurname"] = "El apellido es inválido";
+ }
+ if (! checkEmail($email)) {
+   $errors["email"] = "El email ingresado no es válido";
+ }
+ if (! checkPass($pass)) {
+   $errors["pass"] = "El password ingresado no es válido";
+ }
+ return $errors;
+}
+
+
+function uploadPhoto($foto){
+  if (count($photo)) {
+      $avatarFileName = $photo['name'];
+      $avatarFile = $photo['tmp_name'];
+      $avatarExtension = pathinfo($avatarFileName, PATHINFO_EXTENSION);
+
+      $result = move_uploaded_file($avatarFile, 'avatars/' . sha1($user['username']) . '.' . $avatarExtension);
+  }
+  return $resultado;
+}
+
+
 ?>

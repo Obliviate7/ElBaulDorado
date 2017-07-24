@@ -1,6 +1,5 @@
 <?php
-require_once "users.php";
-require_once "register.php";
+
 function checkNameSurname($nameSurname, $minlength){
   $nameSurname = trim($nameSurname);
 
@@ -29,23 +28,5 @@ function checkdate($birthDate){
 }
 */
 
-function checkUser($usrName,$usrSurname, $email, $pass) {
-
- $errors = [];
-
- if (! checkNameSurname($usrName, 2)){
-   $errors["usrName"] = "El nombre es inválido";
- }
- if (! checkNameSurname($usrName, 2)) {
-   $errors["usrSurname"] = "El apellido es inválido";
- }
- if (! checkEmail($email)) {
-   $errors["email"] = "El email ingresado no es válido";
- }
- if (! checkPass($pass)) {
-   $errors["pass"] = "El password ingresado no es válido";
- }
- return $errors;
-}
 
  ?>

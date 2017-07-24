@@ -6,7 +6,7 @@ function checkAll($miUsuario){
 
 		if (trim($miUsuario["usrName"]) == "")
 		{
-			$errores[] = "Falta el nombre";
+			$errores[] = "Falta el nomasdre";
 		}
 		if (trim($miUsuario["usrSurname"]) == "")
 		{

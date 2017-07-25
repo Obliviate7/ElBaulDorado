@@ -184,7 +184,7 @@ if ($completed) {
               $email = test_input($_POST["email"]);
             // verifica que la sintaxis del email sea valida
               if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email)) {
-                echo = "Ingresaste un email invalido";
+                echo "Ingresaste un email invalido";
             }
              ?>
           </span>

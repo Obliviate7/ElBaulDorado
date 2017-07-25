@@ -20,4 +20,12 @@ function checkPass2($pass, $pass2){
   return $pass==$pass2;
 }
 
+/*Each $_POST variable with be checked by the function*/
+function test_input($data) {
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+}
+
  ?>

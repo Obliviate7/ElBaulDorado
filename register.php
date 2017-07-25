@@ -178,8 +178,13 @@ if ($completed) {
           >
           <span style='color:red' class="error">
             <?php
-            if(isset($result["email"])) {
-              echo "El email ingresado no es válido";
+            if (empty($result["email"])) {
+              echo "Falto ingresar el correo";
+            } else {
+              $email = test_input($_POST["email"]);
+            // verifica que la sintaxis del email sea valida
+              if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email)) {
+                echo = "Ingresaste un email invalido";
             }
              ?>
           </span>

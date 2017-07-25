@@ -12,7 +12,7 @@ if ($completed) {
   if (isset($errores) && empty($errores)){
     $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass'], $_FILES['avatar']);
     if (!$result) {
-        var_dump($errores);
+        echo "Dumie";
       }
     else {
         echo "Saved. Awesome!";
@@ -72,8 +72,8 @@ if ($completed) {
       <form action="register.php" method="post" enctype="multipart/form-data" class="formRegister">
         <p>Por favor completa los datos a continuacion:</p>
         <?php
-            if (count($errors)) {
-                var_dump($errors);
+            if (count($errores)) {
+                var_dump($errores);
             }
         ?>
         <p><strong class="red">*</strong> campos obligatorios</p>
@@ -84,7 +84,7 @@ if ($completed) {
           <input type="text" name="usrName" class="form-control" id="usrNname" >
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["usrName"])) {
+            if(isset($errores["usrName"])) {
               echo "El nombre ingresado no es válido";
             }
              ?>
@@ -96,7 +96,7 @@ if ($completed) {
           <input type="text" name="usrSurname" class="form-control" id="usrSurname" >
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["usrSurname"])) {
+            if(isset($errores["usrSurname"])) {
               echo "El apellido ingresado no es válido";
             }
              ?>
@@ -109,7 +109,7 @@ if ($completed) {
               <input type="date" id="birthDate" name="birthDate" class="form-control">
               <span style='color:red' class="error">
                 <?php
-                if(isset($errors["birthDate"])) {
+                if(isset($errores["birthDate"])) {
                   echo "La fecha ingresada no es válida";
                 }
                  ?>
@@ -130,7 +130,7 @@ if ($completed) {
           <input type="email" name="email" class="form-control" id="email" placeholder="ejemplo@elbauldorado.com" name="email">
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["email"])) {
+            if(isset($errores["email"])) {
               echo "El email ingresado no es válido";
             }
              ?>
@@ -142,7 +142,7 @@ if ($completed) {
           <input type="password" name="pass" class="form-control" id="pass" placeholder="*******">
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["pass"])) {
+            if(isset($errores["pass"])) {
               echo "La contraseña ingresada no es válida";
             }
              ?>
@@ -154,7 +154,7 @@ if ($completed) {
           <input type="password" name="passCheck" class="form-control" id="passCheck" placeholder="*******">
           <span style='color:red' class="error">
             <?php
-            if(isset($errors["passCheck"])) {
+            if(isset($errores["passCheck"])) {
               echo "La contraseña ingresada no es válida";
             }
              ?>

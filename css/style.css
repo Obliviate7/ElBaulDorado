@@ -24,17 +24,11 @@ body {
 .bannerTop{
 
 }
-.buttonLogin, .buttonSignIn {
-  font-family: 'Lora', serif;
-  position: relative;
-  left: 72%;
-  bottom: 85px;
-  margin: 10px;
-}
-.buttonSignIn{
+.logButtons{
+  text-decoration: none;
+  color: #af9f82;
 
 }
-
 /* Edicion de NAV */
 
 .mainNav{

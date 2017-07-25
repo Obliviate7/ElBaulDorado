@@ -12,7 +12,7 @@ if ($completed) {
   if (isset($errores) && empty($errores)){
     $result = saveUser($_POST['usrName'], $_POST['usrSurname'], $_POST['birthDate'], $_POST['radioGenre'], $_POST['email'], $_POST['pass'], $_FILES['avatar']);
     if (!$result) {
-        echo "Dummie!";
+        var_dump($errores);
       }
     else {
         echo "Saved. Awesome!";

@@ -1,53 +1,23 @@
 <?php
 
-function checkAll($miUsuario){
+function checkNameSurname($nameSurname){
+  $nameSurname = trim($nameSurname);
 
-		$errores = [];
-
-		if (trim($miUsuario["usrName"]) == "")
-		{
-			$errores[] = "Falta el nombre";
-		}
-		if (trim($miUsuario["usrSurname"]) == "")
-		{
-			$errores[] = "Falta el apellido";
-		}
-		if (trim($miUsuario["pass"]) == "")
-		{
-			$errores[] = "Falta la pass";
-		}
-		if (trim($miUsuario["passCheck"]) == "")
-		{
-			$errores[] = "Falta el cpass";
-		}
-		if ($miUsuario["pass"] != $miUsuario["passCheck"])
-		{
-			$errores[] = "Pass y Cpass son distintas";
-		}
-		if ($miUsuario["email"] == "")
-		{
-			$errores[] = "Falta el mail";
-		}
-		if (!filter_var($miUsuario["email"], FILTER_VALIDATE_EMAIL))
-		{
-			$errores[] = "El mail tiene forma fea";
-		}
-		return $errores;
-	}
-
-
-
-/*Como verificar que las passwords sean iguales?
-function samePass($pass, $passcheck){
-$_REQUEST['usrName'], $_REQUEST['usrSurname'], $_REQUEST['birthDate'], $_REQUEST['radioGenre'], $_REQUEST['email'], $_REQUEST['pass']
-  return $passcheck == $pass;
+  return ! empty($nameSurname) && ctype_alpha($nameSurname)
+  && (strlen($nameSurname) > 2 && strlen($nameSurname) < 20);
 }
 
- PENDIENTE CON REGEX = CAOS
-function checkdate($birthDate){
-
+function checkEmail($email){
+  return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
-*/
 
+function checkPass($pass){
+  $pass = trim($pass);
+  return ! empty($pass) && strlen($pass) > 7;
+}
+
+function checkPass2($pass, $pass2){
+  return $pass==$pass2;
+}
 
  ?>

@@ -1,35 +1,35 @@
-
 <?php
+require_once "checks.php";
 
-function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass, $photo) {
+/*funcion para salvar usuario en json*/
+function saveUser($usrName, $usrSurname, $birthDate, $radioGenre, $email, $pass, $pass2, $photo) {
+  $errors = checkUser($usrName,$usrSurname, $email, $pass, $pass2);
+    if (empty($errors)) {
+        $pass = sha1($pass);
 
-    $pass = sha1($pass);
-
-    // Transformarlo a json
-  $jsonUser = json_encode([
-      'name'      => $usrName,
-      'surname'   => $usrSurname,
-      'birthDate' => $birthDate,
-      'genre'     => $radioGenre,
-      'email'     => $email,
-      'password'  => $pass,
-      'avatar'    => uploadPhoto($photo)
-  ]);
-
-  if (writeUserFile($jsonUser)) {
-    return true;
+        // Transformarlo a json
+        $jsonUser = json_encode([
+        'name'      => $usrName,
+        'surname'   => $usrSurname,
+        'birthDate' => $birthDate,
+        'genre'     => $radioGenre,
+        'email'     => $email,
+        'password'  => $pass
+        ]);
+        if (writeUserFile($jsonUser)) {
+          uploadPhoto($photo);
+        }
+        return $result;
+      } else {
+      return $errors;
+    }
   }
-  else {
-    return false;
-  }
-  }
 
-  function writeUserFile($jsonUser) {
-  $fp = fopen("users.json", "a+");
-
-  $result = fwrite($fp, $jsonUser . PHP_EOL);
-
-  return $result;
+/*funcion para escribir usuario en json*/
+  function writeUserFile($jsonUser2) {
+    $fp = fopen("users.json", "a+");
+    $result = fwrite($fp, $jsonUser2 . PHP_EOL);
+    return $result;
   }
 
 /*funcion para buscar mail y pass registrado*/
@@ -62,6 +62,27 @@ function searchUser($email)
   }
   return false;
 }
+
+/*funcion para checkear usuario*/
+  function checkUser($usrName,$usrSurname, $email, $pass, $pass2) {
+    $errors = [];
+    if (! checkNameSurname($usrName)){
+      $errors["usrName"] = "El nombre es inválido";
+    }
+    if (! checkNameSurname($usrSurname)) {
+      $errors["usrSurname"] = "El apellido es inválido";
+    }
+    if (! checkEmail($email)) {
+      $errors["email"] = "El email ingresado no es válido";
+    }
+    if (! checkPass($pass)) {
+      $errors["pass"] = "El password ingresado no es válido";
+    }
+    if (! checkPass2($pass, $pass2)) {
+      $errors["pass2"] = "El password no coincide";
+    }
+    return $errors;
+  }
 
 function uploadPhoto($photo){
   if (count($photo)) {

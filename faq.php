@@ -44,7 +44,7 @@
                ?>
               </li>
           </span>
-          <span><li>
+          <span><li class="logButtons">
               <?php
               if (isset($_SESSION['email'])) {
                  echo $_SESSION['email'];

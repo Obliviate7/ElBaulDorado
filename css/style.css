@@ -27,8 +27,12 @@ body {
 .logButtons{
   text-decoration: none;
   color: #af9f82;
-
 }
+.logButtonsText{
+  text-decoration: none;
+  color: #af9f82;
+}
+
 /* Edicion de NAV */
 
 .mainNav{

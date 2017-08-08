@@ -41,9 +41,9 @@ Prueba para probar que se borra el json
             <li>
                <?php
                if (isset($_SESSION['email'])) {
-                  echo '<a href="logOut.php"><span class="glyphicon glyphicon-user"></span>Deslogear</a>';
+                  echo '<a href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
                } else {
-                  echo '<a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrate</a>';
+                  echo '<a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
                   }
                ?>
               </li>
@@ -53,7 +53,7 @@ Prueba para probar que se borra el json
               if (isset($_SESSION['email'])) {
                  echo $_SESSION['email'];
               } else {
-                 echo'<a href="login.php" ><span class="glyphicon glyphicon-log-in"></span>Login</a>';
+                 echo'<a href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>';
                  }
               ?>
           </li>

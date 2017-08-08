@@ -24,7 +24,7 @@ body {
 .bannerTop{
 
 }
-.logButtons{
+.logButtons, .logButtons:hover, .logButtons:focus{
   text-decoration: none;
   color: #af9f82;
 }

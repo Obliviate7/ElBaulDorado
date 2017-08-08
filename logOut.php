@@ -23,12 +23,8 @@
   <body>
 
     <header class="mainHeader">
-      <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
         <a class="title" href="index.php">El Baul Dorado</a>
-      <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
-      <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
-
     <nav class="mainNav navbar navbar-default">
       <div class="container-fluid">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,11 +42,11 @@
           <ul class="nav navbar-nav navbar-right">
             <span>
             <li>
-            <a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrate</a>
+            <a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>
               </li>
           </span>
           <span><li>
-            <a href="login.php" ><span class="glyphicon glyphicon-log-in"></span>Login</a>
+            <a href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>
           </li>
           </span>
           </ul>

@@ -62,9 +62,9 @@ if ($completed) {
                    <?php
                    /*si esta iniciada la sesion muestra el deslogear, si no el register*/
                    if (isset($_SESSION['email'])) {
-                        echo '<a href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
+                        echo '<a class="logButtons" href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
                    } else {
-                      echo '<a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
+                      echo '<a class="logButtons" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
                       }
                    ?>
                   </li>
@@ -75,7 +75,7 @@ if ($completed) {
                   if (isset($_SESSION['email'])) {
                      echo $_SESSION['usrName'];
                   } else {
-                     echo'<a href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>';
+                     echo'<a class="logButtons" href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>';
                      }
                   ?>
               </li>

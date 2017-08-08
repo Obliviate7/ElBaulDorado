@@ -49,7 +49,7 @@
               if (isset($_SESSION['email'])) {
                  echo $_SESSION['email'];
               } else {
-                 echo'<a href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>';
+                 echo'<a class="logButtons" href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>';
                  }
               ?>
           </li>

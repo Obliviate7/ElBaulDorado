@@ -31,8 +31,8 @@
             <li><a href="faq.php">FAQ's</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span> Registrate </a></li>
-            <li><a href="login.php"><span class="logButtons glyphicon glyphicon-log-in"></span> Ingresa </a></li>
+            <li><a class="logButtons" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span> Registrate </a></li>
+            <li><a class="logButtons" href="login.php"><span class="logButtons glyphicon glyphicon-log-in"></span> Ingresa </a></li>
           </ul>
         </div>
       </div>

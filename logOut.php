@@ -42,11 +42,11 @@
           <ul class="nav navbar-nav navbar-right">
             <span>
             <li>
-            <a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>
+            <a class="logButtons" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>
               </li>
           </span>
           <span><li>
-            <a href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>
+            <a class="logButtons" href="login.php" ><span class="logButtons glyphicon glyphicon-log-in"></span>Login</a>
           </li>
           </span>
           </ul>

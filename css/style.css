@@ -28,7 +28,7 @@ body {
   text-decoration: none;
   color: #af9f82;
 }
-.logButtonsText:hover, .logButtonsText:focus {
+.logButtonsText, .logButtonsText:hover, .logButtonsText:focus {
   text-decoration: none;
   color: #af9f82;
 }

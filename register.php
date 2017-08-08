@@ -64,7 +64,7 @@ if ($completed) {
                    if (isset($_SESSION['email'])) {
                         echo '<a class="logButtons " href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
                    } else {
-                      echo '<a class="logButtonsText" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
+                      echo '<a class="logButtons" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
                       }
                    ?>
                   </li>

@@ -28,10 +28,6 @@ body {
   text-decoration: none;
   color: #af9f82;
 }
-.logButtonsText, .logButtonsText:hover, .logButtonsText:focus {
-  text-decoration: none;
-  color: #af9f82;
-}
 
 /* Edicion de NAV */
 

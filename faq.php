@@ -34,12 +34,12 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <span>
-            <li class="logButtons">
+            <li>
                <?php
                if (isset($_SESSION['email'])) {
-                  echo '<a href="logOut.php"><span class="glyphicon glyphicon-user"></span>Deslogear</a>';
+                  echo '<a class="logButtons" href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
                } else {
-                  echo '<a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrate</a>';
+                  echo '<a class="logButtons" href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
                   }
                ?>
               </li>

@@ -3,8 +3,6 @@
     require_once "users.php";
 ?>
 
-prueba
-prueba de fabi
 <!DOCTYPE html>
 <html>
   <head>

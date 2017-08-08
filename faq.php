@@ -2,7 +2,7 @@
     session_start();
     require_once "users.php";
 ?>
-
+Prueba para probar que se borra el json
 <!DOCTYPE html>
 <html>
   <head>

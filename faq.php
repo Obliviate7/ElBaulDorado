@@ -2,7 +2,6 @@
     session_start();
     require_once "users.php";
 ?>
-Prueba para probar que se borra el json
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,10 +16,7 @@ Prueba para probar que se borra el json
   </head>
   <body>
     <header class="mainHeader">
-      <!--   <h1 class="title" href="index.html">El Baul Dorado</h1> -->
         <a class="title" href="index.php">El Baul Dorado</a>
-      <!-- <a href="#" class="buttonLogin btn btn-default">Ingresa</a> -->
-      <!-- <a href="#" class="buttonSignIn btn btn-default">Registrate</a> -->
     </header>
     <nav class="mainNav navbar navbar-default">
       <div class="container-fluid">

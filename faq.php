@@ -37,9 +37,9 @@
             <li>
                <?php
                if (isset($_SESSION['email'])) {
-                  echo '<a href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span>Deslogear</a>';
+                  echo '<a href="logOut.php"><span class="logButtons glyphicon glyphicon-user"></span class="logButtons">Deslogear</a>';
                } else {
-                  echo '<a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span>Registrate</a>';
+                  echo '<a href="register.php"><span class="logButtons glyphicon glyphicon-user"></span class="logButtons">Registrate</a>';
                   }
                ?>
               </li>

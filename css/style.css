@@ -24,9 +24,13 @@ body {
 .bannerTop{
 
 }
-.logButtons, .logButtons:hover, .logButtons:focus{
+.logButtons, .logButtons:focus{
   text-decoration: none;
   color: #af9f82;
+}
+.logButtons:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /* Edicion de NAV */

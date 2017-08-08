@@ -33,7 +33,7 @@
             <li><a href="faq.php">FAQ's</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <span class="logButtons">
+            <span>
             <li>
                <?php
                if (isset($_SESSION['email'])) {
@@ -44,7 +44,7 @@
                ?>
               </li>
           </span>
-          <span class="logButtons"><li>
+          <span><li>
               <?php
               if (isset($_SESSION['email'])) {
                  echo $_SESSION['email'];

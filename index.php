@@ -3,7 +3,6 @@
     require_once "users.php";
 ?>
 
-prueba
 <!DOCTYPE html>
 <html>
   <head>

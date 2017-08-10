@@ -398,16 +398,16 @@ if ($completed) {
         </div>
 
         <div class="form-group">
-          <label for="clothes">Tipo de ropa favorita:</label>
-              <input type="checkbox" class="form-control" name="clothes1" value="casual"> Casual
-              <input type="checkbox" class="form-control" name="clothes2" value="urban">  Urbana
-              <input type="checkbox" class="form-control" name="clothes2" value="formal"> Formal
-              <input type="checkbox" class="form-control" name="clothes2" value="dress">  Vestidos
-              <input type="checkbox" class="form-control" name="clothes2" value="pants">  Pantalones
-              <input type="checkbox" class="form-control" name="clothes2" value="shirt">  Camisetas
-              <input type="checkbox" class="form-control" name="clothes2" value="beach">  Playa
-              <input type="checkbox" class="form-control" name="clothes2" value="man">    Hombre
-              <input type="checkbox" class="form-control" name="clothes2" value="woman">  Mujer
+          <label for="clothes">Tipo de ropa favorita:</label><br>
+              <input type="checkbox" class="formcontrol01" name="clothes1" value="casual"> Casual
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="urban">  Urbana
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="formal"> Formal
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="dress">  Vestidos
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="pants">  Pantalones
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="shirt">  Camisetas
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="beach">  Playa
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="man">    Hombre
+              <input type="checkbox" class="formcontrol01" name="clothes2" value="woman">  Mujer
         </div>
 
         <div class="form-group">

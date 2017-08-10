@@ -2,6 +2,11 @@ body {
   background-image: url(../images/white-wood.jpg);
 }
 
+.formcontrol01{
+
+  display: inline-block;
+}
+
 .title {
   font-family: 'Playfair Display', serif;
   color: black;

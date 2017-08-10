@@ -33,7 +33,7 @@ if ($completed) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title class="titleLink">El Baul Dorado - Register</title>
+    <title class="titleLink">El Baul Dorado - Profile</title>
   </head>
   <body>
 
@@ -87,10 +87,10 @@ if ($completed) {
 
     <div class="containerRegister">
 
-      <h2 class="titleRegister">Registrate</h2>
+      <h2 class="titleRegister">Modifica tus datos de perfil</h2>
       <form action="register.php" method="post" enctype="multipart/form-data" class="formRegister">
       <input type='hidden' name='submitted' id='submitted' value='1'/>
-      <p>Por favor completa los datos a continuacion:</p>
+      <p>Cambia los datos que desees a continuacion:</p>
 
         <p><strong class="red">*</strong> campos obligatorios</p>
 
